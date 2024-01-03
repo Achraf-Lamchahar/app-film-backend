@@ -4,17 +4,20 @@ import com.example.film.entities.Comments;
 import com.example.film.repositories.CommentsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:5000")
 @RestController
 @RequestMapping("/comments")
 public class CommentsController {
 
     @Autowired
     private CommentsRepo commentsRepo;
+
 
     @GetMapping
     public List<Comments> getComments(){
